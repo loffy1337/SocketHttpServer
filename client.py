@@ -57,7 +57,6 @@ class HttpClient:
             client_connection.send(request.encode())
             response = client_connection.recv(1024)
             client_connection.close()
-            print(response)
             if response.decode().startswith('HTTP/1.1 405 Method Not Allowed'):
                 return True
             return False
